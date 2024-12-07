@@ -6,7 +6,7 @@ public class Abrir : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Transform puerta;
+    //public Transform puerta;
     Animator animator;
     public bool abrirbol;
 
@@ -24,16 +24,18 @@ public class Abrir : MonoBehaviour
 
     public void abrir()
     {
-        puerta.rotation = Quaternion.LookRotation(new Vector3(90,0,60));
+        transform.rotation = Quaternion.LookRotation(new Vector3(90,0,60));
         animator.SetBool("Abierto", false);
         abrirbol = true;
+        Debug.Log("abrido");
 
     }
 
     public void cerrar()
     {
-        puerta.rotation = Quaternion.LookRotation(new Vector3(0, 0, 0));
+        transform.rotation = Quaternion.LookRotation(new Vector3(0, 0, 0));
         animator.SetBool("Abierto", true);
-        abrirbol = false; 
+        abrirbol = false;
+        Debug.Log("Cerrado");
     }
 }
